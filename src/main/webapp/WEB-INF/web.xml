@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>controlador.EmpleadoControlador</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ClienteControlador</servlet-name>
+  	<display-name>ClienteControlador</display-name>
+  	<description></description>
+  	<servlet-class>controlador.ClienteControlador</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>EmpleadoControlador</servlet-name>
   	<url-pattern>/EmpleadoControlador</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ClienteControlador</servlet-name>
+  	<url-pattern>/ClienteControlador</url-pattern>
   </servlet-mapping>
 </web-app>
