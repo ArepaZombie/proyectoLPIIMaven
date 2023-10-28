@@ -5,6 +5,7 @@ import dao.CrudEmpleadoImp;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -69,8 +70,12 @@ public class EmpleadoControlador extends HttpServlet {
 		  //invocamos al metodo registrar..
 		  crud.RegistrarEmpleado(tblemp);
 		  
+		  //Recuperamos el lsitado
+		  List<TblEmpleado> listado = crud.ListadoEmpleado();
+		  request.setAttribute("listado", listado);
+		  
 		  //redireccionamos 
-		 request.getRequestDispatcher("/index").forward(request, response);
+		 request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
 }

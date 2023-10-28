@@ -1,3 +1,7 @@
+
+<%@page import="java.util.*" %>
+<%@page import="modelo.TblEmpleado" %>
+
 <html>
 <body bgcolor="#c5dec9">
 <h2 align="center" >Registrar Empleado</h2>
@@ -61,6 +65,41 @@
 
 </table>
 </form>
+
+<h2 align="center"> Lista de Empleados</h2>
+
+<table align="center" border="2">
+
+	<tr>
+		<th>Codigo</th>
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th>Sexo</th>
+		<th>Email</th>
+		<th>Fecha</th>
+		<th>Telefono</th>
+		<th>Dni</th>
+	</tr>
+<%
+List<TblEmpleado> listado = (List<TblEmpleado>)request.getAttribute("listado");
+if(listado!=null){
+	for(TblEmpleado empleado:listado){
+		%>
+	<tr>
+		<td><%=empleado.getIdempleado() %> </td>
+		<td><%=empleado.getNombre() %> </td>
+		<td><%=empleado.getApellido() %> </td>
+		<td><%=empleado.getSexo() %> </td>
+		<td><%=empleado.getEmail() %> </td>
+		<td><%=empleado.getFechanac() %> </td>
+		<td><%=empleado.getTel() %> </td>
+		<td><%=empleado.getDni() %> </td>
+	</tr>
+		<% 
+	}
+}
+%>
+</table>
 
 
 </body>

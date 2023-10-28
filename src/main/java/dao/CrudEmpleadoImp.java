@@ -40,7 +40,7 @@ public class CrudEmpleadoImp implements Iempleadoable {
 
 	@Override
 	public List<TblEmpleado> ListadoEmpleado() {
-		EntityManagerFactory factory=Persistence.createEntityManagerFactory("proyectoLPIISabado");
+		EntityManagerFactory factory=Persistence.createEntityManagerFactory("ProyectoLPIISabado");
 		EntityManager emanager = factory.createEntityManager();
 		emanager.getTransaction().begin();
 		
@@ -54,7 +54,7 @@ public class CrudEmpleadoImp implements Iempleadoable {
 
 	@Override
 	public TblEmpleado BuscarEmpleado(TblEmpleado empleado) {
-		EntityManagerFactory factory=Persistence.createEntityManagerFactory("proyectoLPIISabado");
+		EntityManagerFactory factory=Persistence.createEntityManagerFactory("ProyectoLPIISabado");
 		EntityManager emanager = factory.createEntityManager();
 		emanager.getTransaction().begin();
 		
