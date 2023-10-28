@@ -58,7 +58,7 @@ public class CrudEmpleadoImp implements Iempleadoable {
 		EntityManager emanager = factory.createEntityManager();
 		emanager.getTransaction().begin();
 		
-		List<TblEmpleado> listado=emanager.createQuery("select e from TblEmpleado e",TblEmpleado.class).getResultList();
+		
 		
 		emanager.getTransaction().commit();
 		emanager.close();
