@@ -9,5 +9,5 @@ public interface Iempleadoable {
 	public void ActualizarEmpleado(TblEmpleado empleado);
 	public void EliminarEmpleado(TblEmpleado empleado);
 	public List<TblEmpleado> ListadoEmpleado();
-	
+	public TblEmpleado BuscarEmpleado(TblEmpleado empleado);
 }
