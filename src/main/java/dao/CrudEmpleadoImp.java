@@ -14,7 +14,7 @@ public class CrudEmpleadoImp implements Iempleadoable {
 	@Override
 	public void RegistrarEmpleado(TblEmpleado empleado) {
 		// TODO Auto-generated method stub
-		EntityManagerFactory factory=Persistence.createEntityManagerFactory("proyectoLPIISabado");
+		EntityManagerFactory factory=Persistence.createEntityManagerFactory("ProyectoLPIISabado");
 		EntityManager emanager = factory.createEntityManager();
 		
 		emanager.getTransaction().begin();

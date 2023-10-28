@@ -4,6 +4,8 @@ import modelo.TblEmpleado;
 import dao.CrudEmpleadoImp;
 
 import java.io.IOException;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,19 +38,39 @@ public class EmpleadoControlador extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		TblEmpleado tblep=new TblEmpleado();
-		CrudEmpleadoImp crud=new CrudEmpleadoImp();
-		
-		/*
-		//Damos valores	
-		tblep.setNombre("Juanote");
-		tblep.setApellido("Torres Mora");
-		tblep.setSexo("m");
-		tblep.setEmail("bettyteamo@hotmail.com");
-		*/
-		
-		crud.RegistrarEmpleado(tblep);
-		doGet(request, response);
+		//recuperamos los valores del formulario...
+
+		  String nombre=request.getParameter("nombre");
+		  String apellido=request.getParameter("apellido");
+		  String sexo=request.getParameter("sexo");
+		  String email=request.getParameter("email");
+		  String fecha=request.getParameter("fecha");
+		  String telef=request.getParameter("telefono");
+		  String dni=request.getParameter("dni");
+
+		  //realizamos las rescpectivas instancias.
+
+		  TblEmpleado tblemp=new TblEmpleado();
+		  CrudEmpleadoImp crud=new CrudEmpleadoImp();
+		  //convertir fecha a sql...
+
+		  Date fec=new Date();
+		  Date fechsql=new Date(fec.getTime());
+		  //asignamos valores...
+
+		  tblemp.setNombre(nombre);
+		  tblemp.setApellido(apellido);
+		  tblemp.setSexo(sexo);
+		  tblemp.setEmail(email);
+		  tblemp.setFechanac(fechsql);
+		  tblemp.setTel(telef);
+		  tblemp.setDni(dni);
+		  
+		  //invocamos al metodo registrar..
+		  crud.RegistrarEmpleado(tblemp);
+		  
+		  //redireccionamos 
+		 request.getRequestDispatcher("/index").forward(request, response);
 	}
 
 }
