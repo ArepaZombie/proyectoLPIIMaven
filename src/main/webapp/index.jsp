@@ -19,8 +19,8 @@
 
 <!-- ---------------- -->
 <tr>
-	<td colspan="2">
-	<select name="sexo">
+	<td colspan="2" align="center">
+	<select name="sexo" >
 		<option>Seleccione sexo</option>
 		<option>M</option>
 		<option>F</option>
@@ -54,7 +54,7 @@
 
 <!-- ---------------- -->
 <tr>
-	<td colspan="2">
+	<td colspan="2" align="center">
 		<input type="submit" value="Registrar">
 	</td>
 </tr>
